@@ -1,0 +1,23 @@
+#!/usr/bin/.env bash
+
+docker compose build
+docker compose up -d backend
+bash bin/manage migrate
+bash bin/manage create_admin_user
+echo -e "\n"
+echo -e "${COLOR_GREEN}Installation completed successfully.${COLOR_NONE}"
+echo -e "\n"
+echo -e "There are credentials for test user:"
+echo -e "login: ${COLOR_GREEN}admin@mail.com${COLOR_NONE}"
+echo -e "password: ${COLOR_GREEN}adminpassword${COLOR_NONE}"
+echo -e "\n"
+
+read -p "Would you like to start the docker containers right now$INPUT_DEFAULT? " OPEN_CONFIRM
+if [[ "$OPEN_CONFIRM" == "" ]]; then
+    OPEN_CONFIRM="y";
+fi
+if [[ "$OPEN_CONFIRM" == *"y"* || "$OPEN_CONFIRM" == *"Y"* ]]; then
+    docker compose up
+else
+    echo -e "\nYou can start them manually via docker compose up"
+fi
