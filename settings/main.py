@@ -62,5 +62,8 @@ SPECTACULAR_SETTINGS = {
     'SERVE_INCLUDE_SCHEMA': False,
     'CONTACT': {'email': 'contact@snippets.local'},
     'LICENSE': {'name': 'BSD License'},
+    'AUTHENTICATION_CLASSES': [
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    ],
     # OTHER SETTINGS
 }

@@ -18,7 +18,7 @@ from apps.redirects.serializers.redirect_rule import RedirectRuleSerializer
         responses={status.HTTP_200_OK: RedirectRuleSerializer,},
     ),
 )
-class RedirectRuleViewSet(
+class RedirectRuleGetViewSet(
     mixins.RetrieveModelMixin,
     mixins.ListModelMixin,
     GenericViewSet,
