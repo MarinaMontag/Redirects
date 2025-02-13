@@ -17,6 +17,7 @@ drf-spectacular = "0.28.0"
 psycopg2-binary = "2.9.10"
 pytz = "2025.1"
 nanoid = "2.0.0"
+factory-boy = "3.3.3"
 
 [requires]
 python_version = "3.12"
