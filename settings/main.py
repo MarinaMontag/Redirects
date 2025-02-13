@@ -5,8 +5,11 @@ from .base import *
 INSTALLED_APPS += [
     'django_extensions',
     'apps.accounts',
+    'apps.common',
+    'apps.redirects',
     'corsheaders',
     'rest_framework',
+    'rest_framework_simplejwt',
     'drf_spectacular',
 ]
 
