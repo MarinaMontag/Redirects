@@ -15,7 +15,10 @@ from apps.redirects.serializers.redirect_rule import RedirectRuleSerializer
     ),
     retrieve=extend_schema(
         description='Retrieve a redirect rule',
-        responses={status.HTTP_200_OK: RedirectRuleSerializer,},
+        responses={
+            status.HTTP_200_OK: RedirectRuleSerializer,
+            status.HTTP_404_NOT_FOUND: OpenApiResponse(description='Redirect rule not found'),
+        },
     ),
 )
 class RedirectRuleGetViewSet(
